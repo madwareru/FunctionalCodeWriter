@@ -18,6 +18,13 @@ namespace FunctionalCodeWriter
         }
 
         public string PrintResult() => _sb.ToString();
+
+        public void Clear()
+        {
+            _sb.Clear();
+            _indentCount = 0;
+        }
+        
         public ICodeWriter IncIndent()
         {
             ++_indentCount;

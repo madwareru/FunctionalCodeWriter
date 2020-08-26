@@ -7,6 +7,7 @@ namespace FunctionalCodeWriter
     public interface ICodeWriter
     {
         string PrintResult();
+        void Clear();
         ICodeWriter IncIndent();
         ICodeWriter DecIndent();
         ICodeWriter AddText(string text);
