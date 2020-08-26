@@ -11,7 +11,7 @@ namespace FunctionalCodeWriter
         private readonly StringBuilder _sb;
         private uint _indentCount;
 
-        private CodeWriter()
+        public CodeWriter()
         {
             _sb = new StringBuilder();
             _indentCount = 0;

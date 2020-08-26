@@ -1,6 +1,6 @@
 namespace FunctionalCodeWriter
 {
-    public static class CodeMutatorExt
+    public static class CodeWriterMutatorExt
     {
         public static CodeWriterMutator Entry => i => i;
         public static CodeWriterMutator IncIndent => i => i.IncIndent();
@@ -14,8 +14,10 @@ namespace FunctionalCodeWriter
             AddLine(line) + AddLine("{") + IncIndent;
         public static CodeWriterMutator AddLineWithBracketInline(string line = "") =>
             AddText(line) + AddLine("{") + IncIndent;
-        public static CodeWriterMutator CloseBracket(string text = "") => 
-            AddLine(text) + DecIndent + AddLine("}");
+        public static CodeWriterMutator CloseBracket => 
+            DecIndent + AddLine("}");
+        public static CodeWriterMutator AddLineWithCloseBracket(string text = "") => 
+            AddLine(text) + CloseBracket;
         
         public static ICodeWriter Do(this ICodeWriter writer, CodeWriterMutator mutator) =>
             mutator(writer);
