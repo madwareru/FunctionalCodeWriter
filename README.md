@@ -2,7 +2,7 @@
 Code writer inspired by power of functional composition
 
 ## Example usage
-Add follosing usings:
+Add following usings:
 ```CSharp
 using FunctionalCodeWriter;
 using static FunctionalCodeWriter.CodeWriterMutatorExt;
